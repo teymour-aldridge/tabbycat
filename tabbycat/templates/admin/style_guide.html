@@ -156,6 +156,7 @@
 
   <div class="list-group list-group-flush">
   <form>
+    {% csrf_token %}
 
     {% trans "Form Title" context "page title" as title %}
     {% trans "Sub Title Title" as text %}
