@@ -731,7 +731,9 @@ class DebateResultWithScoresMixin:
             if not self.get_ghost(side, pos) and result.get_ghost(side, pos):
                 self.set_ghost(side, pos, result.get_ghost(side, pos))
             elif self.get_ghost(side, pos) and not result.get_ghost(side, pos):
-                errors.append(ResultError("Inconsistent ghost order", "ghost", side, pos))
+                errors.append(
+                    ResultError("Inconsistent order of speeches marked as duplicate (also known as 'ghost' speeches).", "ghost", side, pos),
+                )
 
         return errors
 
