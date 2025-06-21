@@ -44,6 +44,8 @@ from itertools import product
 from statistics import mean
 from typing import TYPE_CHECKING, Union
 
+from django.utils.translation import gettext_lazy as _
+
 from adjallocation.allocation import AdjudicatorAllocation
 from adjallocation.models import DebateAdjudicator
 from draw.types import DebateSide
@@ -726,13 +728,13 @@ class DebateResultWithScoresMixin:
             if cur_speaker is None:
                 self.set_speaker(side, pos, result.get_speaker(side, pos))
             elif result.get_speaker(side, pos) != cur_speaker:
-                errors.append(ResultError("Inconsistent speaker order", "speaker", side, pos))
+                errors.append(ResultError(_("Inconsistent speaker order"), "speaker", side, pos))
 
             if not self.get_ghost(side, pos) and result.get_ghost(side, pos):
                 self.set_ghost(side, pos, result.get_ghost(side, pos))
             elif self.get_ghost(side, pos) and not result.get_ghost(side, pos):
                 errors.append(
-                    ResultError("Inconsistent marking of duplicate (iron-person) speeches", "ghost", side, pos),
+                    ResultError(_("Inconsistent marking of duplicate (iron-person) speeches"), "ghost", side, pos),
                 )
 
         return errors
