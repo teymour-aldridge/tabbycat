@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from utils.admin import ModelAdmin
 
@@ -28,6 +29,14 @@ class RoundAdmin(ModelAdmin):
     list_filter = ('tournament', )
     search_fields = ('name', 'seq', 'abbreviation', 'stage', 'draw_type', 'draw_status')
     ordering = ('tournament__slug', 'seq')
+
+    def get_queryset(self, request):
+        from django.contrib import messages
+        messages.warning(request, _("WARNING: make sure to refresh the page if any "
+                                    "changes (e.g. generating a draw) have been made to "
+                                    "the round since you last loaded the page. "
+                                    "Not doing this can risk catastrophic data loss."))
+        return super().get_queryset(request)
 
 
 @admin.register(ScheduleEvent)
