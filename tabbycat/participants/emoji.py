@@ -258,30 +258,30 @@ EMOJI_LIST = (
     ("😐",	True , "Neutral"),
     ("😶",	True , "No Mouth"),
     ("😏",	True , "Smirking"),
-    ("😣",	True , "Persevering"),
-    ("😥",	True , "Disappointed"),
+    ("😣",	False, "Persevering"),
+    ("😥",	False, "Disappointed"),
     ("😪",	False, "Sleepy"),                           # too similar to another
     ("😫",	False, "Tired"),                            # too similar to another
     ("😌",	False, "Relieved"),                         # too similar to another
-    ("😜",	True , "Tongue Out"),
+    ("😜",	False, "Tongue Out"),
     ("😝",	False, "Tongue Out Closed Eyes"),           # too similar to another
     ("😒",	False, "Unamused"),                         # too similar to another
-    ("😓",	True , "Cold Sweat"),
-    ("😔",	True , "Pensive"),
-    ("😖",	True , "Confounded"),
-    ("😷",	True , "Medical Mask"),
+    ("😓",	False, "Cold Sweat"),
+    ("😔",	False, "Pensive"),
+    ("😖",	False, "Confounded"),
+    ("😷",	False, "Medical Mask"),
     ("😲",	True , "Astonished"),
     ("😞",	False, "Disappointed"),                     # too similar to another
     ("😤",	False, "Face With Look of Triumph"),        # too similar to another
     ("😢",	False, "Crying"),                           # too similar to another
-    ("😭",	True , "Sobbing"),
-    ("😨",	True , "Fearful"),
+    ("😭",	False, "Sobbing"),
+    ("😨",	False, "Fearful"),
     ("😩",	False, "Weary"),                            # too similar to another
     ("😰",	False, "Open Mouth Cold Sweat"),            # too similar to another
-    ("😱",	True , "Screaming"),
-    ("😳",	True , "Flushed"),
-    ("😵",	True , "Dizzy"),
-    ("😡",	True , "Pouting"),
+    ("😱",	False, "Screaming"),
+    ("😳",	False, "Flushed"),
+    ("😵",	False, "Dizzy"),
+    ("😡",	False, "Pouting"),
     ("😠",	False, "Angry"),                            # too similar to another
     ("👿",	False, "Imp"),                              # potentially offensive
     ("😈",	False, "Smiling Face With Horns"),          # too similar to another
@@ -335,7 +335,7 @@ EMOJI_LIST = (
     ("👊",	True , "Fist Hand"),
     ("👌",	True , "OK Hand"),
     ("👍",	True , "Thumbs Up"),
-    ("👎",	True , "Thumbs Down"),
+    ("👎",	False, "Thumbs Down"),                     # potentiall upsetting
     ("👋",	False, "Waving Hand Sign"),                 # used by UI: for the welcome pages
     ("👏",	True , "Clappy Hands"),
     ("👐",	False, "Open Hands Sign"),                  # dull
@@ -865,7 +865,7 @@ EMOJI_LIST = (
     ("📆",	False, "Tear-Off Calendar"),                # dull
     ("📇",	False, "Card Index"),                       # dull
     ("📈",	True , "Up Trend"),
-    ("📉",	True , "Down Trend"),
+    ("📉",	True , "Down Trend"),                       # potentially upsetting
     ("📊",	False, "Bar Chart"),                        # dull
     ("📋",	False, "Clipboard"),                        # dull
     ("📌",	True , "Pushpin"),
@@ -1343,8 +1343,8 @@ EMOJI_LIST = (
     ("🤐",	True , "Hushed"),
     ("🤓",	True , "Nerd"),
     ("🙃",	True , "Upside Down"),
-    ("🤒",	True , "Sick"),
-    ("🤕",	True , "Hurt Head"),
+    ("🤒",	False, "Sick"),
+    ("🤕",	False, "Hurt Head"),
     ("🤑",	False, "Money"),                            # potentially offensive
     ("🏻",	False, "Emoji Modifier 1-2"),               # dull
     ("🏼",	False, "Emoji Modifier 3"),                 # dull
